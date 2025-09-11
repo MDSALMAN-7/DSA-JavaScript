@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array traversing</title>
+    <script>
+        let data = [3,4,6,8,5,9];
+        // 1.
+         // let data = [3,4,6,8,5,9];
+        // data.map((value,key)=>{
+        //     document.write(`${key}=>${value} <br>`);
+        // })
+
+        // 2. using user input finding elemenet
+        function getClick(){
+            let el = document.getElementById("element").value;
+            // validation
+            if(el<data.length){
+                alert(data[el]);
+            }else{
+                alert("Enter a valid number");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="element">
+        <button onclick="getClick()">Get Element</button>
+    </div>
+</body>
+</html>
