@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inserting</title>
+    <script>
+      //   1. Without any predefined method or simple text
+      //   let data = [23, 54, 67, 86, 87, 98, 45];
+      //   let newElement = 65;
+      //   let position = 2;
+
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i === position) {
+      //         data[i] = newElement;
+      //       }
+      //     }
+      //   }
+      //   console.log(data);
+
+      // 2. Getting position or new element by user daynamically
+    //   function InsertClick() {
+    //     let data = [23, 54, 67, 86, 87, 98, 45];
+    //     let newElement = document.getElementById("newElement").value;
+    //     newElement = parseInt(newElement);
+    //     let position = document.getElementById("position").value;
+
+    //     for (let i = data.length - 1; i >= 0; i--) {
+    //       if (i >= position) {
+    //         data[i + 1] = data[i];
+    //         if (i == position) {
+    //           data[i] = newElement;
+    //         }
+    //       }
+    //     }
+    //     console.log(data);
+    //   }
+
+        // 3.Using predined method 
+        function InsertClick(){
+            let data = [23, 54, 67, 86, 87, 98, 45];
+            let newElement = document.getElementById("newElement").value;
+            newElement = parseInt(newElement);
+            let position = document.getElementById("position").value;
+            
+            data.splice(position,0,newElement);
+
+            console.log(data);
+        }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="newElement" placeholder="Enter new Element" />
+    <input type="text" id="position" placeholder="Enter position" />
+
+    <button onclick="InsertClick()">Insert</button>
+  </body>
+</html>
