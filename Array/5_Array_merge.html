@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merge</title>
     <script>
-        // merging 2 arry
-        let data = [1,2,3,4,5,6];
-        let data2 = [7,8,9,10,11,12,13];
-        let data3 = [];
-        let i;
-        for(i=0; i<data.length; i++){
-            data3[i]=data[1];
+      // merging 2 arry
+      // let data = [1,2,3,4,5,6];
+      // let data2 = [7,8,9,10,11,12,13];
+      // let data3 = [];
+      // let i;
+      // for(i=0; i<data.length; i++){
+      //     data3[i]=data[1];
+      // }
+      // for(i=0; i<data2.length; i++){
+      //     data3[data.length+i] = data2[i];
+      // }
+      // console.log(data3);
+
+      // reverse
+      // let data4 = [7,2,6,9,2,5];
+      // data4.reverse();
+      // console.log(data4)
+
+      // using spread method
+      // let arr = [1,2,3,4,5];
+      // let arr2 = [6,7,8,9,10];
+      // let arr3 = [...arr,...arr2];
+      // console.log(arr3);
+
+      let data1 = [3, 10, 12, 4,  6, 90];
+      let data2 = [4, 9, 25, 45];
+      let data3 = [];
+      let d1 = 0;
+      let d2 = 0;
+      let d3 = 0;
+      while (d1 < data1.length && d2 < data2.length) {
+        if (data1[d1] < data2[d2]) {
+          data3[d3] = data1[d1];
+          d1++;
+        } else {
+          data3[d3] = data2[d2];
+          d2++;
         }
-        for(i=0; i<data2.length; i++){
-            data3[data.length+i] = data2[i];
-        }
-        console.log(data3);
-
-        // reverse
-        let data4 = [7,2,6,9,2,5];
-        data4.reverse();
-        console.log(data4)
-
-        // using spread method 
-        let arr = [1,2,3,4,5];
-        let arr2 = [6,7,8,9,10];
-        let arr3 = [...arr,...arr2];
-        console.log(arr3);
-
-
+        d3++;
+      }
+      while (d1 < data1.length) {
+        data3[d3] = data1[d1];
+        d1++;
+        d3++;
+      }
+      console.warn(data3);
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
