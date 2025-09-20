@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+    <script>
+        // function colors(){
+        //     let data = 10;
+        //     console.log(data);
+        // }
+        // function days(){
+        //     colors();
+        // }
+        // function fruits(){
+        //     days();
+        // }
+        // function topfunction(){
+        //     fruits();
+        // }
+        // topfunction();
+
+
+        function test(x){
+            // head recursion
+            // console.log(x); // output is :- 5, 4, 3, 2,1,0
+            if(x>0){
+                test(x-1);
+            }
+            // tail recursion
+            console.log(x);   //output is :- 0,1,2,3,4,5
+
+        }
+        test(5);
+    </script>
+
+</head>
+<body>
+    <h1>Recursion</h1>
+</body>
+</html>
