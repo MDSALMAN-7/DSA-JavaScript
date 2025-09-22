@@ -7,11 +7,37 @@
     <script>
         let data=[];
         let currentSize = data.length;
+        let max = 5;
         // console.log(currentSize);
         function push(newValue){
-            data[currentSize]=newValue;
+            if(currentSize<max){
+                data[currentSize]=newValue;
+                currentSize++;
+            }else{
+                alert("Stack is full"+newValue);
+            }
+            // alert("stack is ful");
+        }
+
+        function pop(){
+            if(currentSize>0){
+                currentSize--;
+                data.length=currentSize;
+            }else{
+                alert("Stack is Impty");
+            }
         }
         push(20);
+        push(30);
+        push(40);
+        push(40);
+        pop();
+        pop();
+        pop();
+        pop();
+        pop();
+        
+
         console.log(data);
     </script>
 </head>

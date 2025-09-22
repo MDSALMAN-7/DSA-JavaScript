@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <script>
+        let data=[];
+        let currentSize = data.length;
+        let max = 5;
+        // console.log(currentSize);
+        function push(){
+            let newValue = document.getElementById("addElement").value;
+            if(currentSize<max){
+                data[currentSize]=newValue;
+                currentSize++;
+                 document.getElementById("addElement").value="";
+            }else{
+                alert("Stack is full");
+            }
+           console.log("Added element"); 
+        }
+        
+
+        function pop(){
+            if(currentSize>0){
+                currentSize--;
+                data.length=currentSize;
+                console.log("removed")
+            }else{
+                alert("Stack is Impty");
+            }
+        }
+        function Display(){
+            // document.getElementById("showHere").innerHTML = newValue;
+            let result = "";
+            let i;
+            for(i=0; i<=currentSize-1; i++){
+                result += data[i] + "<br>";
+            }
+            document.getElementById("showHere").innerHTML = result;
+        }
+    </script> 
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter your number" id="addElement">
+        <button onclick="push()">Add Element</button>
+        <button onclick="pop()">remove Element</button>
+        <button onclick="Display()">Display Element</button>
+    </div>
+    <div id="showHere">
+
+    </div>
+</body>
+</html>
