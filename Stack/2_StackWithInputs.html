@@ -9,12 +9,12 @@
         let currentSize = data.length;
         let max = 5;
         // console.log(currentSize);
-        function push(){
+        function Push(){
             let newValue = document.getElementById("addElement").value;
             if(currentSize<max){
-                data[currentSize]=newValue;
+                data.push(newValue);
                 currentSize++;
-                 document.getElementById("addElement").value="";
+                document.getElementById("addElement").value="";
             }else{
                 alert("Stack is full");
             }
@@ -26,10 +26,12 @@
             if(currentSize>0){
                 currentSize--;
                 data.length=currentSize;
+                
                 console.log("removed")
             }else{
                 alert("Stack is Impty");
             }
+            window.location.reload();
         }
         function Display(){
             // document.getElementById("showHere").innerHTML = newValue;
@@ -45,7 +47,7 @@
 <body>
     <div>
         <input type="text" placeholder="Enter your number" id="addElement">
-        <button onclick="push()">Add Element</button>
+        <button onclick="Push()">Add Element</button>
         <button onclick="pop()">remove Element</button>
         <button onclick="Display()">Display Element</button>
     </div>

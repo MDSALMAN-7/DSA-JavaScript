@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse with stack</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+
+        function Push(newValue){
+            data[currentSize]=newValue;
+            currentSize++;
+        }
+        function Pop(){
+            lastRemovedItem = data[currentSize-1];
+            currentSize--;
+            data.length = currentSize;
+            return lastRemovedItem;
+        }
+        
+
+
+        function revStr(item){
+            for(let i = 0; i<item.length; i++){
+                Push(item[i]);
+            }
+            for(let i = 0; i<item.length; i++){
+                item[i]=Pop();
+                // Pop();
+            }
+        }
+        let str = "jon";
+        str = str.split("");
+        revStr(str);    
+        console.log(str.join("")); 
+        
+        
+        // call by reference
+    //     function test(a){
+    //         a[0]=40;
+
+    //     }
+    //     a =[20];
+    //     test(a);
+    //     console.log(a);
+    // </script>
+</head>
+<body>
+    <h1>Reverse with stack</h1>
+</body>
+</html>
