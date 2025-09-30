@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <style>
+      #bill {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Billing</h1>
+    <form>
+      <dt>Name</dt>
+      <dd>
+        <input type="text" placeholder=" Enter your name" id="username" />
+      </dd>
+      <dt>Amount</dt>
+      <dd><input type="text" placeholder="Enter your Amount" id="amount" /></dd>
+      <dd id="result"></dd>
+    </form>
+    <button type="submit" onclick="GenerateBill()">Generate Bill</button>
+
+    <div id="bill">
+      <div><span>Name</span> <span id="name"></span></div>
+      <div><span>Total amount</span> <span id="totalAmount"></span></div>
+      <div><span>Discount Amount</span> <span id="discountAmount"></span></div>
+      <div><span>Payble Amount</span> <span id="paybleAmount"></span></div>
+    </div>
+
+    <script>
+      function GenerateBill() {
+        let amount = Number(document.getElementById("amount").value);
+        let username = document.getElementById("username").value;
+        let name = document.getElementById("name");
+        let totalAmount = document.getElementById("totalAmount");
+        let discountAmount = document.getElementById("discountAmount");
+        let paybleAmount = document.getElementById("paybleAmount");
+        let bill = document.getElementById("bill");
+        let result = document.getElementById("result");
+
+        if (isNaN(amount) || amount <= 0) {
+          result.innerHTML = "invalid input";
+          console.log(amount);
+        } else {
+          bill.style.display = "block";
+          result.innerHTML = "";
+          if (amount < 5000) {
+            let discount = amount * 0.0;
+            let pay = amount - discount;
+            name.innerHTML = username;
+            totalAmount.innerHTML = amount;
+            discountAmount.innerHTML = discount;
+            paybleAmount.innerHTML = pay;
+
+            console.log(amount);
+          } else if (amount >= 5000 && amount <= 7000) {
+            let discount = amount * 0.05;
+            let pay = amount - discount;
+            name.innerHTML = username;
+            totalAmount.innerHTML = amount;
+            discountAmount.innerHTML = discount;
+            paybleAmount.innerHTML = pay;
+          }else if (amount >= 7001 && amount <= 9000) {
+            let discount = amount * 0.10;
+            let pay = amount - discount;
+            name.innerHTML = username;
+            totalAmount.innerHTML = amount;
+            discountAmount.innerHTML = discount;
+            paybleAmount.innerHTML = pay;
+          }else if ( amount > 9000) {
+            let discount = amount * 0.20;
+            let pay = amount - discount;
+            name.innerHTML = username;
+            totalAmount.innerHTML = amount;
+            discountAmount.innerHTML = discount;
+            paybleAmount.innerHTML = pay;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

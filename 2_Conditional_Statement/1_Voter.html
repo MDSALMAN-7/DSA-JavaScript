@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter</title>
+  </head>
+  <body>
+    <h1>Check Voter is elegible or not</h1>
+    <form>
+      <dt>Name</dt>
+      <dd><input type="text" placeholder="Enter your name" id="name" /></dd>
+      <dt>Age</dt>
+      <dd><input type="number" placeholder="Enter your age" id="age" /></dd>
+    </form>
+    <button type="submit" onclick="ok()">Submit</button>
+    <dd id="lblresult"></dd>
+
+    <script>
+      // let age = Number(prompt("Enter your age"));
+
+      // if(age>18){
+      //     console.log("Your are eligible");
+      // }else{
+      //     console.log("You are not eligible");
+      // }
+
+      function ok() {
+        let age = Number(document.getElementById("age").value);
+        let lblresult = document.getElementById("lblresult");
+        if (isNaN(age)) {
+          lblresult.innerHTML = "INvalid input";
+        } else {
+          if (age > 18) {
+            lblresult.innerHTML = "Elegible";
+          } else {
+            lblresult.innerHTML = " not Elegible";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
