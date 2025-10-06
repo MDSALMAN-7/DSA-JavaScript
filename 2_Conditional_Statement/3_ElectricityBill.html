@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+</head>
+<body>
+    <h1>Electricity Bill</h1>
+    <form >
+        <dt>Unit</dt>
+        <dd><input type="text" placeholder="Enter your bill" id="unit"></dd>
+        <dd id="lblresult"></dd>
+    </form>
+    <Button type="submit" onclick="GenerateBill()">Generate Bill</Button>
+
+    <script>
+        function GenerateBill(){
+            let unit = document.getElementById("unit").value;
+            let bill = document.getElementById("lblresult");
+            let amount =0;
+            
+            if(unit>400){
+                hd = (unit-400)*12;
+                unit = 400;
+            }
+            if(unit>200 && unit<=400){
+                hd += (unit-200)*8;
+                unit = 200;
+            }
+            if(unit>100 && unit<=200){
+                amount += (unit-100)*6;
+                unit = 100;
+            }
+            amount += unit*4;
+
+            bill.innerHTML =`Total bill :- ${amount}`
+            
+        }
+    </script>
+
+</body>
+</html>
