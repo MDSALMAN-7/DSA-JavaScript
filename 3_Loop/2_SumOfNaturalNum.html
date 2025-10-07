@@ -1,0 +1,83 @@
+<!-- sum for specific number  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of natural Number</title>
+    <script>
+        function GetSum(){
+            let num = document.getElementById("num1").value;
+            let result = document.getElementById("lblresult");
+            let valid = document.getElementById("valid");
+            valid.innerHTML = "";
+            result.innerHTML ="";
+            if(isNaN(num) || num<0 ){
+                valid.innerHTML = "Enter valid number";
+            }else{
+                let sum = 0;
+            for(let i=1; i<=num; i++){
+                sum += i;
+            }
+            result.innerHTML = "total sum of number "+ sum;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum of Natural Number</h1>
+    <form>
+        <label for="">Enter Number</label>
+        <input type="text" id="num1">
+        <div id="valid"></div>
+    </form>
+    <button type="submit" onclick="GetSum()">Get sum</button>
+    <div id="lblresult"></div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of natural Number</title>
+    <script>
+      function GetSum() {
+        let num1 = parseInt(document.getElementById("num1").value);
+        let num2 = parseInt(document.getElementById("num2").value);
+        let result = document.getElementById("lblresult");
+        let valid1 = document.getElementById("valid1");
+        let valid2 = document.getElementById("valid2");
+        valid1.innerHTML = "";
+        valid2.innerHTML = "";
+        result.innerHTML = "";
+        if (isNaN(num1) || num1 < 0) {
+          valid1.innerHTML = "Enter valid number";
+        } else if(isNaN(num2) || num2 < 0){
+            valid2.innerHTML = "Enter valid number";
+        }
+        else {
+          let sum = 0;
+          for (let i = num1; i <= num2; i++) {
+            sum += i;
+          }
+          result.innerHTML = `total sum of between ${num1} and ${num2} number`   + sum;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sum of Natural Number</h1>
+    <form>
+      <label for="">Enter first Number</label>
+      <input type="text" id="num1" />
+      <div id="valid1"></div>
+      <label for="">Enter 2nd Number</label>
+      <input type="text" id="num2" />
+      <div id="valid2"></div>
+    </form>
+    <button type="submit" onclick="GetSum()">Get sum</button>
+    <div id="lblresult"></div>
+  </body>
+</html>
