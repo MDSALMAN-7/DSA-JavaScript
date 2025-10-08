@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factorial</title>
+    <title>Reverse</title>
     <script>
-        let pr = prompt("enter your number");
+         let pr = prompt("enter your number");
         if(pr === null){
             console.log("Canceled..");
         }else{
@@ -14,11 +14,13 @@
                 console.log("Number is invalid");
             }else{
                 if(num>0){
-                    let factorial = 1;
-                    for(let i=1; i<=num; i++){
-                        factorial *= i;
+                    let rev = 0;
+                    while(num>0){
+                       let ld = num%10;
+                       rev = rev*10+ld;
+                       num = Math.floor(num/10); 
                     }
-                    console.log(factorial)
+                    console.log(rev);
                 }else{
                     console.log("Number should be positive or more than 0");
                 }

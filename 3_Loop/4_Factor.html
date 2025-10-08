@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factorial</title>
+    <title>Factor</title>
     <script>
         let pr = prompt("enter your number");
         if(pr === null){
@@ -14,11 +14,12 @@
                 console.log("Number is invalid");
             }else{
                 if(num>0){
-                    let factorial = 1;
-                    for(let i=1; i<=num; i++){
-                        factorial *= i;
+                    for(let i=1; i<=Math.floor(num/2); i++){
+                        if(num%i === 0){
+                            console.log(i)
+                        }
                     }
-                    console.log(factorial)
+                    console.log(num);
                 }else{
                     console.log("Number should be positive or more than 0");
                 }
