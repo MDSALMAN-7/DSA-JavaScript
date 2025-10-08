@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME - Guess number</title>
+    <script>
+        let randomNumber = Math.floor(Math.random()*100)+1;
+        // console.log(randomNumber);
+        let guess = -1;
+        while(guess !== randomNumber){
+            guess = Number(prompt("Guess the number"));
+            if(isNaN(guess) || guess <1 || guess>100){
+                console.log("Try again b/w 1 - 100");
+            }
+            if(guess>randomNumber){
+                console.log("Too high, try again");
+            }else if(guess<randomNumber){
+                console.log("Too Low, try again");
+            }else{
+                console.log("Congrates...");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
